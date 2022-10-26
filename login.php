@@ -1,22 +1,29 @@
 <?php
 require 'function.php';
-require 'cek.php';
 // Cek Login apakah terdaftar
 if(isset($_POST['login'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $cekdatabase = mysqli_query($conn, "SELECT * FROM login where email='$email' and password='$password' ");
+    $cekdatabase = mysqli_query($conn, "SELECT * FROM login WHERE email='$email' and password='$password' ");
 
     //hitung jumlah data
     $hitung = mysqli_num_rows($cekdatabase);
 
-    if($hitung>0){
-        // $_SESSION['log'] = 'True';
+    if($hitung === 1){
+        $_SESSION['log'] = 'True';
         header('location:index.php');
     }   else {
         header('location:login.php');
     }
+
+}
+
+if(!isset($_SESSION['log'])){
+
+} else {
+    //Jika sudah login dan mengakses login.php akan redirect ke index.php
+    header('location:index.php');
 }
 ?>
 
@@ -57,7 +64,7 @@ if(isset($_POST['login'])){
                                             </div> -->
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <!-- <a class="small" href="password.html">Forgot Password?</a> -->
-                                                <button class="btn btn-primary" name="login">Login</button>
+                                                <button class="btn btn-primary" type="submit" name="login">Login</button>
                                             </div>
                                         </form>
                                     </div>
