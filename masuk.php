@@ -176,6 +176,7 @@ require 'cek.php';
                         }
                     ?>
                 </select> <br>
+                <input type="number" name="qty" placeholder="Quantity" class="form-control" required><br>
                 <input type="text" name="penerima" placeholder="Penerima" class="form-control" required><br>
                 <button type="submit" class="btn btn-success" name="addBarangMasuk">Submit</button>
                 </div>
