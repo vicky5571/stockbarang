@@ -108,12 +108,25 @@ require 'cek.php';
                                         </tr>
                                     </thead>
                                     <tbody>
+
+                                        <?php
+                                        $ambilsemuadatastock = mysqli_query($conn,"select * from stock");
+                                        while($data=mysqli_fetch_array($ambilsemuadatastock)){
+                                            $i = 1;
+                                            $namabarang = $data['namabarang'];
+                                            $deskripsi = $data['deskripsi'];
+                                            $stock = $data['stock'];
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Xiao</td>
-                                            <td>6/64</td>
-                                            <td>61</td>
+                                            <td><?=$i++;?></td>
+                                            <td><?=$namabarang?></td>
+                                            <td><?=$deskripsi?></td>
+                                            <td><?=$stock?></td>
                                         </tr>
+                                        <?php
+                                        };
+                                        ?>
+
                                     </tbody>
                                 </table>
                             </div>

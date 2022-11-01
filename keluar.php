@@ -100,20 +100,33 @@ require 'cek.php';
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
+                                            <th>Tanggal</th>
                                             <th>Nama Barang</th>
-                                            <th>Deskripsi</th>
-                                            <th>Stock</th>
+                                            <th>Quantity</th>
+                                            <th>Penerima</th>
 
                                         </tr>
                                     </thead>
                                     <tbody>
+
+                                        <?php
+                                        $ambilsemuadatastock = mysqli_query($conn,"select * from keluar k, stock s where s.idbarang = k.idbarang");
+                                        while($data=mysqli_fetch_array($ambilsemuadatastock)){
+                                            $tanggal = $data['tanggal'];
+                                            $namabarang = $data['namabarang'];
+                                            $qty = $data['qty'];
+                                            $penerima = $data['penerima'];
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Xiao</td>
-                                            <td>6/64</td>
-                                            <td>61</td>
+                                            <td><?=$tanggal?></td>
+                                            <td><?=$namabarang?></td>
+                                            <td><?=$qty?></td>
+                                            <td><?=$penerima?></td>
                                         </tr>
+                                        <?php
+                                        };
+                                        ?>
+
                                     </tbody>
                                 </table>
                             </div>
