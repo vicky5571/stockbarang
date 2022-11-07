@@ -154,7 +154,7 @@ require 'cek.php';
                                                     <input type="text" name="deskripsi" value="<?=$deskripsi;?>" class="form-control" required><br>
                                                     <input type="number" name="stock" value="<?=$stock;?>" class="form-control" required><br>
                                                     <input type="hidden" name="idb" value="<?=$idb;?>">
-                                                    <button type="submit" class="btn btn-success" name="updatebarang">Submit</button>
+                                                    <button type="submit" class="btn btn-success" name="editstock">Submit</button>
                                                     </div>
                                                     </form>
 
@@ -182,7 +182,7 @@ require 'cek.php';
                                                         Nama Barang : <?=$namabarang?><br>
                                                         Deskripsi   : <?=$deskripsi?><br>
                                                         Stock       : <?=$stock?><br><br>
-                                                    <button type="submit" class="btn btn-success" name="updateBarang">Submit</button>
+                                                    <button type="submit" class="btn btn-success" name="deletestock">Submit</button>
                                                     </div>
                                                     </form>
 
