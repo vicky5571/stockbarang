@@ -104,7 +104,7 @@ require 'cek.php';
                                             <th>Nama Barang</th>
                                             <th>Deskripsi</th>
                                             <th>Stock</th>
-
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -116,13 +116,80 @@ require 'cek.php';
                                             $namabarang = $data['namabarang'];
                                             $deskripsi = $data['deskripsi'];
                                             $stock = $data['stock'];
+                                            $idb = $data['idbarang'];
                                             ?>
                                         <tr>
                                             <td><?=$i++;?></td>
                                             <td><?=$namabarang?></td>
                                             <td><?=$deskripsi?></td>
                                             <td><?=$stock?></td>
+                                            <td>
+                                                <!-- Button to Open the Modal -->
+                                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editStockModal<?=$idb;?>">
+                                                    Edit
+                                                </button>
+                                                <input type="hidden" name="idbarangyangmaudihapus" value="<?=$idb;?>">
+                                                <!-- Button to Open the Modal -->
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteStockModal<?=$idb;?>">
+                                                    Delete
+                                                </button>
+                                            </td>
                                         </tr>
+
+                                        <!-- Edit Stock Modal -->
+                                        <div class="modal fade" id="editStockModal<?=$idb;?>">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                            
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                    <h4 class="modal-title">Edit Stock</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    
+                                                    <!-- Modal body -->
+                                                    <form method="POST">
+                                                    <div class="modal-body">
+                                                    <input type="text" name="namabarang" value="<?=$namabarang;?>" class ="form-control" required><br>
+                                                    <input type="text" name="deskripsi" value="<?=$deskripsi;?>" class="form-control" required><br>
+                                                    <input type="number" name="stock" value="<?=$stock;?>" class="form-control" required><br>
+                                                    <input type="hidden" name="idb" value="<?=$idb;?>">
+                                                    <button type="submit" class="btn btn-success" name="updatebarang">Submit</button>
+                                                    </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Delete Stock Modal -->
+                                        <div class="modal fade" id="deleteStockModal<?=$idb;?>">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                            
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                    <h4 class="modal-title">Delete Stock</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    
+                                                    <!-- Modal body -->
+                                                    <form method="POST">
+                                                    <div class="modal-body">
+                                                        <input type="hidden" name="idb" value="<?=$idb;?>">
+                                                        Are You sure ,You really want to delete <?=$namabarang?> ? <br><br>
+
+                                                        Nama Barang : <?=$namabarang?><br>
+                                                        Deskripsi   : <?=$deskripsi?><br>
+                                                        Stock       : <?=$stock?><br><br>
+                                                    <button type="submit" class="btn btn-success" name="updateBarang">Submit</button>
+                                                    </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <?php
                                         };
                                         ?>
@@ -162,7 +229,7 @@ require 'cek.php';
 
     </body>
 
-    <!-- The Modal -->
+    <!-- Add Stock Modal -->
     <div class="modal fade" id="addStockModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -186,4 +253,5 @@ require 'cek.php';
             </div>
         </div>
     </div>
+    
 </html>

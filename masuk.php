@@ -92,7 +92,7 @@ require 'cek.php';
                         <div class="card mb-4">
                             <div class="card-header">
                                 <!-- Button to Open the Modal -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addStockModal">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addMasukModal">
                                     Add
                                 </button>
                             </div>
@@ -162,7 +162,7 @@ require 'cek.php';
     </body>
 
     <!-- The Modal -->
-    <div class="modal fade" id="addStockModal">
+    <div class="modal fade" id="addMasukModal">
         <div class="modal-dialog">
             <div class="modal-content">
         
