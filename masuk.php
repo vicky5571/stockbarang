@@ -104,6 +104,7 @@ require 'cek.php';
                                             <th>Nama Barang</th>
                                             <th>Quantity</th>
                                             <th>Penerima</th>
+                                            <th>Action</th>
 
                                         </tr>
                                     </thead>
@@ -116,13 +117,82 @@ require 'cek.php';
                                             $namabarang = $data['namabarang'];
                                             $qty = $data['qty'];
                                             $penerima = $data['penerima'];
+                                            $idb = $data['idmasuk'];
+                                            $idm = $data['idmasuk'];
                                         ?>
                                         <tr>
                                             <td><?=$tanggal?></td>
                                             <td><?=$namabarang?></td>
                                             <td><?=$qty?></td>
                                             <td><?=$penerima?></td>
+                                            <td>
+                                                <!-- Button to Open the Modal -->
+                                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editMasukModal<?=$idb;?>">
+                                                    Edit
+                                                </button>
+                                                <input type="hidden" name="idbarangyangmaudihapus" value="<?=$idb;?>">
+                                                <!-- Button to Open the Modal -->
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteMasukModal<?=$idb;?>">
+                                                    Delete
+                                                </button>
+                                            </td>
                                         </tr>
+
+                                        <!-- Edit Masuk Modal -->
+                                        <div class="modal fade" id="editMasukModal<?=$idb;?>">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                            
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                    <h4 class="modal-title">Edit Masuk</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    
+                                                    <!-- Modal body -->
+                                                    <form method="POST">
+                                                    <div class="modal-body">
+                                                    <input type="text" name="namabarang" value="<?=$namabarang;?>" class ="form-control" placeholder="Nama Barang" required><br>
+                                                    <input type="number" name="quantity" value="<?=$qty;?>" class="form-control" placeholder="Quantity" required><br>
+                                                    <input type="text" name="penerima" value="<?=$penerima;?>" class="form-control" placeholder="Penerima" required><br>
+                                                    <input type="hidden" name="idb" value="<?=$idb;?>">
+                                                    <input type="hidden" name="idm" value="<?=$idm;?>">
+                                                    <button type="submit" class="btn btn-success" name="editmasuk">Submit</button>
+                                                    </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Delete Masuk Modal -->
+                                        <div class="modal fade" id="deleteMasukModal<?=$idm;?>">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                            
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                    <h4 class="modal-title">Delete Masuk</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    
+                                                    <!-- Modal body -->
+                                                    <form method="POST">
+                                                    <div class="modal-body">
+                                                        <input type="hidden" name="idb" value="<?=$idb;?>">
+                                                        Are You sure ,You really want to delete <?=$namabarang?> ? <br><br>
+
+                                                        Nama Barang : <?=$namabarang?><br>
+                                                        Deskripsi   : <?=$deskripsi?><br>
+                                                        Stock       : <?=$stock?><br><br>
+                                                    <button type="submit" class="btn btn-success" name="deletemasuk">Submit</button>
+                                                    </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <?php
                                         };
                                         ?>
