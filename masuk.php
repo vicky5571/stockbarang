@@ -117,7 +117,7 @@ require 'cek.php';
                                             $namabarang = $data['namabarang'];
                                             $qty = $data['qty'];
                                             $penerima = $data['penerima'];
-                                            $idb = $data['idmasuk'];
+                                            $idb = $data['idbarang'];
                                             $idm = $data['idmasuk'];
                                         ?>
                                         <tr>
@@ -153,7 +153,7 @@ require 'cek.php';
                                                     <form method="POST">
                                                     <div class="modal-body">
                                                     <input type="text" name="namabarang" value="<?=$namabarang;?>" class ="form-control" placeholder="Nama Barang" required><br>
-                                                    <input type="number" name="quantity" value="<?=$qty;?>" class="form-control" placeholder="Quantity" required><br>
+                                                    <input type="number" name="qty" value="<?=$qty;?>" class="form-control" placeholder="Quantity" required><br>
                                                     <input type="text" name="penerima" value="<?=$penerima;?>" class="form-control" placeholder="Penerima" required><br>
                                                     <input type="hidden" name="idb" value="<?=$idb;?>">
                                                     <input type="hidden" name="idm" value="<?=$idm;?>">
@@ -166,7 +166,7 @@ require 'cek.php';
                                         </div>
 
                                         <!-- Delete Masuk Modal -->
-                                        <div class="modal fade" id="deleteMasukModal<?=$idm;?>">
+                                        <div class="modal fade" id="deleteMasukModal<?=$idb;?>">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                             
@@ -180,11 +180,14 @@ require 'cek.php';
                                                     <form method="POST">
                                                     <div class="modal-body">
                                                         <input type="hidden" name="idb" value="<?=$idb;?>">
+                                                        <input type="hidden" name="qty" value="<?=$qty;?>">
+                                                        <input type="hidden" name="idm" value="<?=$idm;?>">
+                                                        
                                                         Are You sure ,You really want to delete <?=$namabarang?> ? <br><br>
 
                                                         Nama Barang : <?=$namabarang?><br>
-                                                        Deskripsi   : <?=$deskripsi?><br>
-                                                        Stock       : <?=$stock?><br><br>
+                                                        Penerima   : <?=$penerima?><br>
+                                                        Quantity       : <?=$qty?><br><br>
                                                     <button type="submit" class="btn btn-success" name="deletemasuk">Submit</button>
                                                     </div>
                                                     </form>
