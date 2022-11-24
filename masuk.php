@@ -127,19 +127,19 @@ require 'cek.php';
                                             <td><?=$penerima?></td>
                                             <td>
                                                 <!-- Button to Open the Modal -->
-                                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editMasukModal<?=$idb;?>">
+                                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editMasukModal<?=$idm;?>">
                                                     Edit
                                                 </button>
                                                 <input type="hidden" name="idbarangyangmaudihapus" value="<?=$idb;?>">
                                                 <!-- Button to Open the Modal -->
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteMasukModal<?=$idb;?>">
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteMasukModal<?=$idm;?>">
                                                     Delete
                                                 </button>
                                             </td>
                                         </tr>
 
                                         <!-- Edit Masuk Modal -->
-                                        <div class="modal fade" id="editMasukModal<?=$idb;?>">
+                                        <div class="modal fade" id="editMasukModal<?=$idm;?>">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                             
@@ -166,7 +166,7 @@ require 'cek.php';
                                         </div>
 
                                         <!-- Delete Masuk Modal -->
-                                        <div class="modal fade" id="deleteMasukModal<?=$idb;?>">
+                                        <div class="modal fade" id="deleteMasukModal<?=$idm;?>">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                             
