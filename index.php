@@ -88,9 +88,28 @@ require 'cek.php';
                         <!-- <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol> -->
-
                         <div class="card mb-4">
+                            <div class="card-header">
+
+                            </div>
                             <div class="card-body">
+
+                                <?php
+                                    $ambildatastock = mysqli_query($conn,"select * from stock where stock < 1");
+                                    
+                                    while($fetch=mysqli_fetch_array($ambildatastock)){
+                                        $barang = $fetch['namabarang'];
+                                ?>
+
+                                    <div class="alert alert-danger alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                        <strong>Warning!</strong> Stock <?=$barang;?> telah habis
+                                    </div>
+
+                                <?php
+                                    }
+                                ?>
+
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
