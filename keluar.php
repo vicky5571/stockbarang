@@ -93,7 +93,7 @@ require 'cek.php';
                             <div class="card-header">
                                 <!-- Button to Open the Modal -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addKeluarModal">
-                                    Add
+                                    Add Barang Keluar
                                 </button>
                             </div>
                             <div class="card-body">

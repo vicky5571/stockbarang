@@ -93,7 +93,12 @@ require 'cek.php';
                             <div class="card-header">
                                 <!-- Button to Open the Modal -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addMasukModal">
-                                    Add
+                                    Add Barang Masuk
+                                </button>
+
+                                <!-- Button to Open the Modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addStockModal">
+                                    Add Stock Barang
                                 </button>
                             </div>
                             <div class="card-body">
@@ -265,6 +270,31 @@ require 'cek.php';
                 <input type="number" name="qty" placeholder="Quantity" class="form-control" required><br>
                 <input type="text" name="penerima" placeholder="Penerima" class="form-control" required><br>
                 <button type="submit" class="btn btn-success" name="addBarangMasuk">Submit</button>
+                </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Stock Modal -->
+    <div class="modal fade" id="addStockModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+        
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h4 class="modal-title">Add Stock</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <form method="POST">
+                <div class="modal-body">
+                <input type="text" name="namabarang" placeholder="Nama Barang" class ="form-control" required><br>
+                <input type="text" name="deskripsi" placeholder="Deskripsi Barang" class="form-control" required><br>
+                <input type="number" name="stock" placeholder="Stock" class="form-control" value=0 required><br>
+                <button type="submit" class="btn btn-success" name="addNewBarang">Submit</button>
                 </div>
                 </form>
 
