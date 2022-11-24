@@ -100,6 +100,10 @@ require 'cek.php';
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addStockModal">
                                     Add Stock Barang
                                 </button>
+
+                                <!-- Export Barang Masuk -->
+                                <a href="export_masuk.php" class="btn btn-info">Export Barang Masuk</a>
+
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">

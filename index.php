@@ -77,7 +77,7 @@ require 'cek.php';
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        Admin
                     </div>
                 </nav>
             </div>
@@ -90,7 +90,8 @@ require 'cek.php';
                         </ol> -->
                         <div class="card mb-4">
                             <div class="card-header">
-
+                                <!-- Export Stock Barang -->
+                                <a href="export_stock.php" class="btn btn-info">Export Stock Barang</a>
                             </div>
                             <div class="card-body">
 
@@ -216,7 +217,7 @@ require 'cek.php';
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                            <div class="text-muted">Copyright &copy; Vicky Galih Pamungkas 2022</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;

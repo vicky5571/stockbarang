@@ -95,6 +95,9 @@ require 'cek.php';
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addKeluarModal">
                                     Add Barang Keluar
                                 </button>
+
+                                <!-- Export Barang Keluar -->
+                                <a href="export_keluar.php" class="btn btn-info">Export Barang Keluar</a>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
